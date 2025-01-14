@@ -35,6 +35,7 @@ import {
 import { toast } from "react-toastify" // Import react-toastify
 import { DropdownMenuCheckboxItem } from "@radix-ui/react-dropdown-menu" // Import missing component
 import axios from "axios" // Import axios for HTTP requests
+import Link from "next/link"
 
 export type Course = {
   id: string
@@ -118,10 +119,7 @@ export function DataCourse() {
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
   const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
   const [rowSelection, setRowSelection] = React.useState({})
-  // const [isOpen, setIsOpen] = React.useState(false)
-  // const [deleteId, setDeleteId] = React.useState<string | null>(null)
 
-  // Toastify configuration
   const notify = (message: string, type: "success" | "error") => {
     if (type === "success") {
       toast.success(message)
@@ -151,7 +149,7 @@ export function DataCourse() {
       } else {
         notify("Failed to delete course", "error")
       }
-    } catch  {
+    } catch {
       notify("An error occurred while deleting the course", "error")
     }
   }
@@ -194,6 +192,9 @@ export function DataCourse() {
           }
           className="max-w-sm"
         />
+        <Button asChild variant="outline" className="ml-2">
+          <Link href="/ecourse/add">Tambah Data</Link>
+        </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
