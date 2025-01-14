@@ -94,6 +94,11 @@ export const columns: ColumnDef<Member>[] = [
     cell: ({ row }) => <div className="capitalize">{row.getValue("full_name")}</div>,
   },
   {
+    accessorKey: "jenis_kelamin",
+    header: "Jenis Kelamin",
+    cell: ({ row }) => <div className="capitalize">{row.getValue("jenis_kelamin")}</div>,
+  },
+  {
     accessorKey: "email",
     header: ({ column }) => (
       <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>

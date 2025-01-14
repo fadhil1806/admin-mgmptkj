@@ -152,9 +152,9 @@ export default function Page() {
       <div className="flex-1 rounded-xl border bg-card text-card-foreground shadow p-3" >
         <Card className="mx-auto max-w-2xl mt-8 mb-8">
           <CardHeader>
-            <CardTitle className="text-2xl">Form Daftar Anggota</CardTitle>
+            <CardTitle className="text-2xl">Tambah Data E-Course</CardTitle>
             <CardDescription>
-              Musyawarah Guru Mata Pelajaran Teknik Jaringan Komputer dan Telekomunikasi se Jawa Barat
+              
             </CardDescription>
           </CardHeader>
           <CardContent>

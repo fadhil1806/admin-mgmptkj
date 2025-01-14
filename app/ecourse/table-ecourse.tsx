@@ -67,7 +67,7 @@ export const columns: ColumnDef<Course>[] = [
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
-        Name
+        Nama Course
         <ArrowUpDown />
       </Button>
     ),
@@ -75,7 +75,7 @@ export const columns: ColumnDef<Course>[] = [
   },
   {
     accessorKey: "author",
-    header: "Author",
+    header: "Penulis",
     cell: ({ row }) => <div>{row.getValue("author")}</div>,
   },
   {
@@ -154,13 +154,7 @@ export function DataCourse() {
     }
   }
 
-  // Handle update action
-  const handleUpdate = async (course: Course) => {
-    console.log(course)
-    // Here you can add your logic for updating the course.
-    // Example: Navigate to a form page to update the course.
-    notify("Course updated successfully", "success")
-  }
+
 
   const table = useReactTable({
     data,
@@ -259,16 +253,13 @@ export function DataCourse() {
                       <DropdownMenuContent align="end">
                         <DropdownMenuLabel>Actions</DropdownMenuLabel>
                         {/* Edit Action */}
-                        <DropdownMenuItem onClick={() => window.open(`/form/edit/${row.original.id}`, '_self')}>
+                        <DropdownMenuItem onClick={() => window.open(`/ecourse/edit/${row.original.id}`, '_self')}>
                           Edit
                         </DropdownMenuItem>
                         {/* Delete Action */}
                         <DropdownMenuSeparator />
                         <DropdownMenuItem onClick={() => handleDelete(row.original.id)}>
                           Delete Course
-                        </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => handleUpdate(row.original)}>
-                          Update Course
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
